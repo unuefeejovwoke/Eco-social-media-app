@@ -318,6 +318,11 @@ body{
 }
 .nav-menu ul li{
     list-style-type: none;
+    padding: 10px;
+}
+.nav-menu ul li a{
+    text-decoration: none;
+    color: #fff;
 }
 .nav-menu ul li .link{
     text-decoration: none;

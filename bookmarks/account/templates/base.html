@@ -17,16 +17,22 @@
             <p>ECOBOOK .</p>
         </div>
         <div class="nav-menu" id="navMenu">
+            {% if request.user.is_authenticated %}
             <ul>
-                <li><a href="#" class="link active">Home</a></li>
-                {% comment %} <li><a href="#" class="link">People</a></li> {% endcomment %}
-                {% comment %} <li><a href="#" class="link">Services</a></li>
-                <li><a href="#" class="link">About</a></li> {% endcomment %}
+                <li {% if section == "dashboard" %} class="link active" {% endif %}><a href="{% url 'dashboard' %}" >My Dashboard</a></li>
+                <li {% if section == "images" %} class="link active" {% endif %}><a href="#">Images</a></li>
+                <li {% if section == "people" %} class="link active" {% endif %}><a href="#">People</a></li>
+                
             </ul>
+            {% endif %}
         </div>
         <div class="nav-button">
-            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
-            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+            {% if request.user.is_authenticated %}
+                Hello {{ request.user.first_name|default:request.user.username }},
+            <button class="btn white-btn" id="loginBtn"><a style="text-decoration: none; color: white;" href="{% url 'logout' %}" >Logout</a></button>
+            {% else %}
+            <button  class="btn white-btn" id="loginBtn"> <a  href="{% url 'login' %}">Login</a></button>
+            {% endif %}
         </div>
         <div class="nav-menu-btn">
             <i class="bx bx-menu" onclick="myMenuFunction()"></i>
