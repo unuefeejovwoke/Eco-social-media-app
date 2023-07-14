@@ -367,7 +367,7 @@ body{
     justify-content: center;
     width: 512px;
     height: 420px;
-    overflow: hidden;
+    overflow: visible;
     z-index: 2;
 }
 .login-container{
@@ -380,7 +380,7 @@ body{
 }
 .register-container{
     position: absolute;
-    right: -520px;
+  
     width: 500px;
     display: flex;
     flex-direction: column;
