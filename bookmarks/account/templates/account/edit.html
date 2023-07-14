@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-box">
+  <form method="post" enctype="multipart/form-data" class="login-container" id="edit-profile">
+    {% csrf_token %}
+    <div class="top">
+     
+      <header>Edit Profile</header>
+    </div>
+    <div class="input-box">
+      <input type="text" class="input-field" name="first_name" placeholder="First Name" value="{{ user_form.first_name.value }}">
+      <i class="bx bx-user"></i>
+    </div>
+    <div class="input-box">
+      <input type="text" class="input-field" name="last_name" placeholder="Last Name" value="{{ user_form.last_name.value }}">
+      <i class="bx bx-user"></i>
+    </div>
+    <div class="input-box">
+      <input type="email" class="input-field" name="email" placeholder="Email" value="{{ user_form.email.value }}">
+      <i class="bx bx-envelope"></i>
+    </div>
+    <div class="input-box">
+      <input type="text" class="input-field" name="bio" placeholder="Bio" value="{{ profile_form.bio.value }}">
+      <i class="bx bx-user"></i>
+    </div>
+    <div class="input-box">
+      <input type="date" class="input-field" name="date_of_birth" placeholder="Date of Birth" value="{{ profile_form.date_of_birth.value }}">
+      <i class="bx bx-calendar"></i>
+    </div>
+    <div class="input-box">
+      <input type="file" class="input-field" name="photo">
+      <i class="bx bx-upload"></i>
+    </div>
+    <div class="input-box">
+      <input type="submit" class="submit" value="Save changes">
+    </div>
+  </form>
+</div>
+{% endblock %}
