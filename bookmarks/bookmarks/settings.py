@@ -149,9 +149,7 @@ SOCIAL_AUTH_PIPELINE = [
 ]
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = '###' # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '####' # Facebook App Secret
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
